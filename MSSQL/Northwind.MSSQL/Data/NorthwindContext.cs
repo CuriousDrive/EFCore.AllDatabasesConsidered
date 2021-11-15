@@ -115,7 +115,7 @@ namespace Northwind.MSSQL.Data
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.ToTable("Customers$");
+                entity.ToTable("Customers");
 
                 entity.HasIndex(e => e.City, "City");
 
