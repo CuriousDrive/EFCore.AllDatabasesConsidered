@@ -121,11 +121,14 @@ namespace Northwind.MSSQL.Controllers
 
         //Loading related data
         [HttpGet("GetCustomerOrders")]
-        public async Task<IEnumerable<Customer>> GetCustomerOrders()
+        public async Task<ActionResult<Customer>> GetCustomerOrders(string customerId)
         {
-            return await _context.Customers.Take(5)
-                                    .Include(c => c.Orders)
-                                    .ToListAsync();
+            var customer = await _context.Customers
+                                .Where(c => c.CustomerId == customerId)
+                                .Include(c => c.Orders) 
+                                .FirstOrDefaultAsync();
+            
+            return customer == null ? NotFound() : customer;                         
         }
 
         //Loading data from stored procedure - 10248

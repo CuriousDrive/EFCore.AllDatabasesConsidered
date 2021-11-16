@@ -10,8 +10,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// I want to change something here but it's not getting recorded
-
 builder.Services.AddDbContext<Northwind.MSSQL.Data.NorthwindContext>(
     options =>
     {
