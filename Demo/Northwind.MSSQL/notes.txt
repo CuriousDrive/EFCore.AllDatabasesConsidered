@@ -1,3 +1,0 @@
-﻿Microsoft.EntityFrameworkCore.Design
-Microsoft.EntityFrameworkCore.SqlServer
-Microsoft.AspNetCore.Mvc.NewtonsoftJson
