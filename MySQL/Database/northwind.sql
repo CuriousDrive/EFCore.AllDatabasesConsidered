@@ -334,7 +334,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `get_product_value`(productId INTEGER
 BEGIN
 	DECLARE productValue DECIMAL(10,2);
     
-    SELECT UnitsInStock * UnitPrice into productValue from northwind.products where ProductID = productId limit 1;
+    SELECT UnitsInStock * UnitPrice into productValue from products where ProductID = productId limit 1;
     RETURN (productValue);
 END ;;
 DELIMITER ;
