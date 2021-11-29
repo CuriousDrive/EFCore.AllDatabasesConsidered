@@ -10,10 +10,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ExtendedNorthwindContext>(
+builder.Services.AddDbContext<NorthwindContext>(
 options =>
 {
-    options.UseMySql(builder.Configuration.GetConnectionString("NorthwindDB"), 
+    options.UseMySql(builder.Configuration.GetConnectionString("NorthwindDB"),
+    Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql"));
+});
+
+
+builder.Services.AddDbContext<NorthwindContextProcedures>(
+options =>
+{
+    options.UseMySql(builder.Configuration.GetConnectionString("NorthwindDB"),
     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql"));
 });
 

@@ -6,13 +6,13 @@ using Northwind.Models;
 
 namespace Northwind.Data
 {
-    public partial class northwindContext : DbContext
+    public partial class NorthwindContext : DbContext
     {
-        public northwindContext()
+        public NorthwindContext()
         {
         }
 
-        public northwindContext(DbContextOptions<northwindContext> options)
+        public NorthwindContext(DbContextOptions<NorthwindContext> options)
             : base(options)
         {
         }
@@ -26,14 +26,6 @@ namespace Northwind.Data
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<Shipper> Shippers { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseMySql("name=NorthwindDB", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.23-mysql"));
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
