@@ -4,17 +4,15 @@ Server=localhost;Database=Northwind;Uid=root;Pwd=root
 Packages to install =>
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Pomelo.EntityFrameworkCore.MySql
-dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
 Install & Update dotnet EF tool =>
 dotnet tool install --global dotnet-ef
 dotnet tool update --global dotnet-ef
 
 Scaffold MySQL Database =>
-dotnet ef dbcontext scaffold Name=NorthwindDB Pomelo.EntityFrameworkCore.MySql --output-dir Models --context-dir Data --namespace Northwind.Models --context-namespace Northwind.Data -context NorthwindContext -f --no-onconfiguring
+dotnet ef dbcontext scaffold Name=NorthwindDB Pomelo.EntityFrameworkCore.MySql --output-dir Models --context-dir Data --namespace Northwind.Models --context-namespace Northwind.Data --context NorthwindContext -f --no-onconfiguring
 
-
-
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
 
 
