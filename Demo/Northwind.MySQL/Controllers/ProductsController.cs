@@ -15,12 +15,13 @@ namespace Northwind.MySQL.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly NorthwindContext _context;
-        private readonly NorthwindContextProcedures _northwindContextProcedures;
+        private readonly NorthwindContextProcedures _contextProcedures;
 
-        public ProductsController(NorthwindContext context, NorthwindContextProcedures northwindContextProcedures)
+        public ProductsController(NorthwindContext context, 
+            NorthwindContextProcedures contextProcedures)
         {
             _context = context;
-            _northwindContextProcedures = northwindContextProcedures;
+            _contextProcedures = contextProcedures;
 
         }
 
@@ -108,11 +109,28 @@ namespace Northwind.MySQL.Controllers
             return _context.Products.Any(e => e.ProductId == id);
         }
 
+        //loading related data
+        [HttpGet("GetSupplierFromProductName")]
+        public async Task<Product?> GetSupplierFromProductName(string? productName)
+        {
+            return await _context.Products
+                .Include(p => p.Supplier)
+                .Where(p => p.ProductName == productName)
+                .FirstOrDefaultAsync();
+        }
 
+        //calling a view
+        [HttpGet("GetAlphabeticalListOfProducts")]
+        public async Task<IEnumerable<AlphabeticalListOfProduct>> GetAlphabeticalListOfProducts()
+        {
+            return await _context.AlphabeticalListOfProducts.ToListAsync();
+        }
+
+        //calling stored procedure
         [HttpGet("GetCustOrderHistory")]
         public async Task<IEnumerable<CustOrderHistory>> GetCustOrderHistory(string customerId)
         {
-            return await _northwindContextProcedures.CustOrderHistories
+            return await _contextProcedures.CustOrderHistories
                 .FromSqlRaw("call cust_order_history({0})", customerId)
                 .ToListAsync();
         }
