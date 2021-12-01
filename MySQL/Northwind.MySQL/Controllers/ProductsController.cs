@@ -22,7 +22,6 @@ namespace Northwind.MySQL.Controllers
         {
             _context = context;
             _contextProcedures = contextProcedures;
-
         }
 
         // GET: api/Products
