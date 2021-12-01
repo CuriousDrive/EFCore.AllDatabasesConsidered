@@ -13,20 +13,3 @@ Scaffold MySQL Database =>
 dotnet ef dbcontext scaffold Name=NorthwindDB Pomelo.EntityFrameworkCore.MySql --output-dir Models --context-dir Data --namespace Northwind.Models --context-namespace Northwind.Data --context NorthwindContext -f --no-onconfiguring
 
 dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
