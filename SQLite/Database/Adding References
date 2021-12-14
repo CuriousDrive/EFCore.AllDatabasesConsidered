@@ -1,0 +1,7 @@
+-- EmployeeTerritory1 definition
+
+CREATE TABLE "EmployeeTerritory" 
+(
+  "Id" VARCHAR(8000) PRIMARY KEY, 
+  "TerritoryId" VARCHAR(8000) NULL 
+, EmployeeId INTEGER REFERENCES Employee(id));
