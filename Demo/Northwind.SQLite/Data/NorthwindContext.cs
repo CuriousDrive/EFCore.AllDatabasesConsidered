@@ -195,13 +195,11 @@ namespace Northwind.Data
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
-                    .HasForeignKey(d => d.CategoryId)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    .HasForeignKey(d => d.CategoryId);
 
                 entity.HasOne(d => d.Supplier)
                     .WithMany(p => p.Products)
-                    .HasForeignKey(d => d.SupplierId)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    .HasForeignKey(d => d.SupplierId);
             });
 
             modelBuilder.Entity<ProductDetail>(entity =>
