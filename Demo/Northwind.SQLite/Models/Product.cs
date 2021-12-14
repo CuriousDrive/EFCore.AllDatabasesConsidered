@@ -5,6 +5,11 @@ namespace Northwind.Models
 {
     public partial class Product
     {
+        public Product()
+        {
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
         public long Id { get; set; }
         public string? ProductName { get; set; }
         public long SupplierId { get; set; }
@@ -15,5 +20,9 @@ namespace Northwind.Models
         public long UnitsOnOrder { get; set; }
         public long ReorderLevel { get; set; }
         public long Discontinued { get; set; }
+
+        public virtual Category Category { get; set; } = null!;
+        public virtual Supplier Supplier { get; set; } = null!;
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

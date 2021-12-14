@@ -10,5 +10,6 @@ namespace Northwind.Models
         public long? EmployeeId { get; set; }
 
         public virtual Employee? Employee { get; set; }
+        public virtual Territory? Territory { get; set; }
     }
 }

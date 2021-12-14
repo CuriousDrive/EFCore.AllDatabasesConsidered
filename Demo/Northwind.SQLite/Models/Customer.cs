@@ -5,6 +5,11 @@ namespace Northwind.Models
 {
     public partial class Customer
     {
+        public Customer()
+        {
+            Orders = new HashSet<Order>();
+        }
+
         public string Id { get; set; } = null!;
         public string? CompanyName { get; set; }
         public string? ContactName { get; set; }
@@ -16,5 +21,7 @@ namespace Northwind.Models
         public string? Country { get; set; }
         public string? Phone { get; set; }
         public string? Fax { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

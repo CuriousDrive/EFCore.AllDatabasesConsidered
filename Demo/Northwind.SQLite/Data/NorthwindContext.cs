@@ -118,6 +118,10 @@ namespace Northwind.Data
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.EmployeeTerritories)
                     .HasForeignKey(d => d.EmployeeId);
+
+                entity.HasOne(d => d.Territory)
+                    .WithMany(p => p.EmployeeTerritories)
+                    .HasForeignKey(d => d.TerritoryId);
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -147,6 +151,15 @@ namespace Northwind.Data
                 entity.Property(e => e.ShipRegion).HasColumnType("VARCHAR(8000)");
 
                 entity.Property(e => e.ShippedDate).HasColumnType("VARCHAR(8000)");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.CustomerId);
+
+                entity.HasOne(d => d.Employee)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.EmployeeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
@@ -158,6 +171,14 @@ namespace Northwind.Data
                 entity.Property(e => e.Discount).HasColumnType("DOUBLE");
 
                 entity.Property(e => e.UnitPrice).HasColumnType("DECIMAL");
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.OrderDetails)
+                    .HasForeignKey(d => d.OrderId);
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.OrderDetails)
+                    .HasForeignKey(d => d.ProductId);
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -171,6 +192,16 @@ namespace Northwind.Data
                 entity.Property(e => e.QuantityPerUnit).HasColumnType("VARCHAR(8000)");
 
                 entity.Property(e => e.UnitPrice).HasColumnType("DECIMAL");
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+
+                entity.HasOne(d => d.Supplier)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.SupplierId)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<ProductDetail>(entity =>

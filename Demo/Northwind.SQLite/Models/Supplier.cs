@@ -5,6 +5,11 @@ namespace Northwind.Models
 {
     public partial class Supplier
     {
+        public Supplier()
+        {
+            Products = new HashSet<Product>();
+        }
+
         public long Id { get; set; }
         public string? CompanyName { get; set; }
         public string? ContactName { get; set; }
@@ -17,5 +22,7 @@ namespace Northwind.Models
         public string? Phone { get; set; }
         public string? Fax { get; set; }
         public string? HomePage { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

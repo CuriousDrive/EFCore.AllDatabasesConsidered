@@ -8,6 +8,7 @@ namespace Northwind.Models
         public Employee()
         {
             EmployeeTerritories = new HashSet<EmployeeTerritory>();
+            Orders = new HashSet<Order>();
         }
 
         public long Id { get; set; }
@@ -24,11 +25,11 @@ namespace Northwind.Models
         public string? Country { get; set; }
         public string? HomePhone { get; set; }
         public string? Extension { get; set; }
-        public byte[]? Photo { get; set; }
         public string? Notes { get; set; }
         public long? ReportsTo { get; set; }
         public string? PhotoPath { get; set; }
 
         public virtual ICollection<EmployeeTerritory> EmployeeTerritories { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
