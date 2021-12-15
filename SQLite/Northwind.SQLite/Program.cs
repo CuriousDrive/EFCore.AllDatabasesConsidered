@@ -17,6 +17,7 @@ builder.Services.AddDbContext<NorthwindContext>
 builder.Services.AddMvc(option => option.EnableEndpointRouting = false)
     .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

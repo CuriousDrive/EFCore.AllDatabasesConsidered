@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.SQLite", "Northwind.SQLite.csproj", "{42085F03-8EBB-4EC2-8F5F-3C490C99F2DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.SQLite", "Northwind.SQLite.csproj", "{3FA5EA0F-72C5-43F7-B743-27C0760E0E5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{42085F03-8EBB-4EC2-8F5F-3C490C99F2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42085F03-8EBB-4EC2-8F5F-3C490C99F2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42085F03-8EBB-4EC2-8F5F-3C490C99F2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42085F03-8EBB-4EC2-8F5F-3C490C99F2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA5EA0F-72C5-43F7-B743-27C0760E0E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA5EA0F-72C5-43F7-B743-27C0760E0E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA5EA0F-72C5-43F7-B743-27C0760E0E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA5EA0F-72C5-43F7-B743-27C0760E0E5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9837F5BE-CC42-4053-9C90-2760C0D9D6AD}
+		SolutionGuid = {8F1C397D-15E5-48B1-A74B-AC49F59417F2}
 	EndGlobalSection
 EndGlobal
