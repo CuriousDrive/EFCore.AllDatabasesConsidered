@@ -8,6 +8,7 @@ We have created tutorials for you to create these projects from scratch. Please 
 | ----- | ---- |
 | MS SQL Server | https://youtu.be/DoYmpAPoixI |
 | MySQL | https://youtu.be/pzFY45La2LE |
+| SQLite | https://youtu.be/xs3JKpePnvs |
 
 # Contact Us
 
