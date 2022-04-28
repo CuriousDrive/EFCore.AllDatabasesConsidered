@@ -11,9 +11,9 @@ public class NorthwindContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseCosmos(
-            "", 
-            "", 
-            "");
+            "accountEndpoint", 
+            "accountKey", 
+            "databaseName");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

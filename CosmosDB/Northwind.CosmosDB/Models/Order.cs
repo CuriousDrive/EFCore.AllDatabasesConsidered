@@ -3,7 +3,6 @@ namespace Northwind.Models;
 public class Order
 {
     public string? Id { get; set; }
-    public string? EmployeeID { get; set; }
     public DateTime? OrderDate { get; set; }
     public DateTime? RequiredDate { get; set; }
     public DateTime? ShippedDate { get; set; }
