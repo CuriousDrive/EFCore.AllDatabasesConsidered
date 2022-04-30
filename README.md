@@ -1,5 +1,5 @@
 # Introduction
-This repository contains ASP.NET Core projects which are using EF Core to perform database operations for MS SQL Server, MySQL & SQLite. We have created these projects for developers who are getting started with EF Core and they want to know how you perform CRUD operations, load related data, load data from views and call stored procedures.
+This repository contains sample .NET projects which are using EF Core to perform database operations for MS SQL Server, MySQL, SQLite & CosmosDB. We have created these projects for developers who are getting started with EF Core and they want to know how you perform CRUD operations, load related data, load data from views and call stored procedures.
 
 # Tutorials
 We have created tutorials for you to create these projects from scratch. Please check the list below to create Web APIs for your databases.
